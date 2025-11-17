@@ -4,7 +4,7 @@ public class EnrollmentDTO {
     private Long id;
     private Long courseId;
     private Long userId;
-    private String status; // например "enrolled", "completed"
+    private String status; 
 
-    // getters and setters
+    
 }
