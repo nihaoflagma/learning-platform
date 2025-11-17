@@ -26,7 +26,7 @@ public class EnrollmentService {
         this.enrollmentRepository = enrollmentRepository;
     }
 
-    // Записать студента на курс
+    
     @Transactional
     public void enrollStudent(Long courseId, Long studentId) {
         User student = userRepository.findById(studentId)
@@ -46,7 +46,7 @@ public class EnrollmentService {
         System.out.println("Студент " + student.getName() + " записан на курс " + course.getTitle());
     }
 
-    // Получить всех студентов конкретного курса
+    
     @Transactional(readOnly = true)
     public List<User> getStudentsInCourse(Long courseId) {
         Course course = courseRepository.findById(courseId)
@@ -58,7 +58,7 @@ public class EnrollmentService {
                 .toList();
     }
 
-    // Получить все курсы студента
+    
     @Transactional(readOnly = true)
     public List<Course> getCoursesOfStudent(Long studentId) {
         User student = userRepository.findById(studentId)
@@ -70,7 +70,7 @@ public class EnrollmentService {
                 .toList();
     }
 
-    // Отписать студента от курса
+
     @Transactional
     public void unenrollStudent(Long courseId, Long studentId) {
         User student = userRepository.findById(studentId)
