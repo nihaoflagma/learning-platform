@@ -20,20 +20,20 @@ public class QuizController {
         this.lessonService = lessonService;
     }
 
-    // Получить все тесты
+    
     @GetMapping
     public List<Quiz> getAllQuizzes() {
         return quizService.getAllQuizzes();
     }
 
-    // Получить конкретный тест
+    
     @GetMapping("/{id}")
     public Quiz getQuiz(@PathVariable Long id) {
         return quizService.getQuizById(id)
                 .orElseThrow(() -> new RuntimeException("Тест не найден"));
     }
 
-    // Получить все тесты конкретного урока
+    
     @GetMapping("/lesson/{lessonId}")
     public List<Quiz> getQuizzesByLesson(@PathVariable Long lessonId) {
         Lesson lesson = lessonService.getLessonById(lessonId)
