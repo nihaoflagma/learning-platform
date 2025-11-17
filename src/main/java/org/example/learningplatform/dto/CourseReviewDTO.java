@@ -5,7 +5,7 @@ public class CourseReviewDTO {
     private Long courseId;
     private Long userId;
     private String comment;
-    private int rating; // например от 1 до 5
+    private int rating; 
 
-    // getters and setters
+    
 }
