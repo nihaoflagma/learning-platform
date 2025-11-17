@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "users") // чтобы не конфликтовать с SQL-словами
+@Table(name = "users") 
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,21 +28,21 @@ public class User {
     @Column(nullable = false)
     private Role role;
 
-    // связи
+  
 
-    // один пользователь может иметь один профиль
+    
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Profile profile;
 
-    // студент может иметь много решений
+    
     @OneToMany(mappedBy = "student", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Submission> submissions;
 
-    // студент может иметь много результатов тестов
+    
     @OneToMany(mappedBy = "student", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<QuizSubmission> quizSubmissions;
 
-    // роли пользователя
+    
     public enum Role {
         STUDENT,
         TEACHER,
