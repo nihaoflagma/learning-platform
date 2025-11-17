@@ -27,7 +27,7 @@ public class QuizSubmissionController {
         this.userService = userService;
     }
 
-    // Студент сдает тест
+    
     @PostMapping("/submit")
     public QuizSubmission submitQuiz(@RequestParam Long quizId,
                                      @RequestParam Long studentId,
@@ -46,7 +46,7 @@ public class QuizSubmissionController {
         return quizSubmissionService.submitQuiz(submission);
     }
 
-    // Получить все решения студента
+    
     @GetMapping("/student/{studentId}")
     public List<QuizSubmission> getStudentSubmissions(@PathVariable Long studentId) {
         User student = userService.getUserById(studentId)
