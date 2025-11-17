@@ -21,7 +21,7 @@ public class Tag {
     @Column(nullable = false, unique = true)
     private String name;
 
-    // Курсы, которые помечены этим тегом
+    
     @ManyToMany(mappedBy = "tags", fetch = FetchType.LAZY)
     private Set<Course> courses;
 }
