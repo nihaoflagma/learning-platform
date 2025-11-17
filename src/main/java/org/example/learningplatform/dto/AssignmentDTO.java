@@ -9,5 +9,5 @@ public class AssignmentDTO {
     private LocalDate dueDate;
     private Long courseId;
 
-    // getters and setters
+    
 }
