@@ -23,7 +23,7 @@ public class Question {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private QuestionType type; // SINGLE_CHOICE, MULTIPLE_CHOICE
+    private QuestionType type; 
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "quiz_id", nullable = false)
