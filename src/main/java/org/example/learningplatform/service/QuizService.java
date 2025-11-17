@@ -16,22 +16,22 @@ public class QuizService {
         this.quizRepository = quizRepository;
     }
 
-    // Получить все тесты
+    
     public List<Quiz> getAllQuizzes() {
         return quizRepository.findAll();
     }
 
-    // Получить тест по ID
+    
     public Optional<Quiz> getQuizById(Long id) {
         return quizRepository.findById(id);
     }
 
-    // Создать новый тест
+    
     public Quiz createQuiz(Quiz quiz) {
         return quizRepository.save(quiz);
     }
 
-    // Обновить тест
+    
     public Quiz updateQuiz(Quiz quiz) {
         return quizRepository.save(quiz);
     }
