@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface CourseReviewRepository extends JpaRepository<CourseReview, Long> {
 
-    // Найти все отзывы по курсу
+    
     List<CourseReview> findByCourse(Course course);
 
-    // Найти все отзывы по студенту
+    
     List<CourseReview> findByStudent(User student);
 }
