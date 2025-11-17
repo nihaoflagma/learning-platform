@@ -64,7 +64,7 @@ public class CourseController {
                 .collect(Collectors.toList());
     }
 
-    // ======== Методы для конвертации ========
+    
     private CourseDTO convertToDTO(Course course) {
         CourseDTO dto = new CourseDTO();
         dto.setId(course.getId());
