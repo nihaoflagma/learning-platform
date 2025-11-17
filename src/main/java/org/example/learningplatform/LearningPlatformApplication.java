@@ -32,7 +32,7 @@ public class LearningPlatformApplication {
                              QuizSubmissionRepository quizSubmissionRepository) {
         return args -> {
 
-            // Создаем пользователей
+            
             User teacher = User.builder()
                     .name("Иван Иванов")
                     .email("ivan@example.com")
@@ -54,7 +54,7 @@ public class LearningPlatformApplication {
                     .build();
             userRepository.save(student2);
 
-            // Создаем курс
+            
             Course course = Course.builder()
                     .title("Основы Hibernate")
                     .description("Курс по Hibernate и JPA")
@@ -62,7 +62,7 @@ public class LearningPlatformApplication {
                     .build();
             courseRepository.save(course);
 
-            // Создаем модули курса
+            
             org.example.learningplatform.entity.Module module1 = org.example.learningplatform.entity.Module.builder()
                     .title("Введение")
                     .course(course)
@@ -75,7 +75,7 @@ public class LearningPlatformApplication {
                     .build();
             moduleRepository.save(module2);
 
-            // Создаем уроки
+            
             Lesson lesson1 = Lesson.builder()
                     .title("Урок 1")
                     .content("Содержание урока 1")
@@ -90,7 +90,7 @@ public class LearningPlatformApplication {
                     .build();
             lessonRepository.save(lesson2);
 
-            // Создаем задание
+            
             Assignment assignment1 = Assignment.builder()
                     .title("Домашнее задание 1")
                     .description("Выполнить упражнение")
@@ -98,7 +98,7 @@ public class LearningPlatformApplication {
                     .build();
             assignmentRepository.save(assignment1);
 
-            // Создаем записи на курс
+            
             Enrollment enrollment1 = Enrollment.builder()
                     .course(course)
                     .student(student1)
@@ -113,14 +113,14 @@ public class LearningPlatformApplication {
                     .build();
             enrollmentRepository.save(enrollment2);
 
-            // Создаем тест
+            
             Quiz quiz = Quiz.builder()
                     .title("Тест по модулю 1")
                     .module(module1)
                     .build();
             quizRepository.save(quiz);
 
-            // Создаем вопросы
+            
             Question question1 = Question.builder()
                     .text("Что такое JPA?")
                     .quiz(quiz)
@@ -128,7 +128,7 @@ public class LearningPlatformApplication {
                     .build();
             questionRepository.save(question1);
 
-            // Создаем варианты ответов
+            
             AnswerOption option1 = AnswerOption.builder()
                     .text("Java Persistence API")
                     .question(question1)
@@ -143,7 +143,7 @@ public class LearningPlatformApplication {
                     .build();
             answerOptionRepository.save(option2);
 
-            // Сохраняем результат прохождения теста
+            
             QuizSubmission submission = QuizSubmission.builder()
                     .quiz(quiz)
                     .student(student1)
