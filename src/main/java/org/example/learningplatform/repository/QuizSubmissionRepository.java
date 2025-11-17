@@ -12,12 +12,12 @@ import java.util.Optional;
 @Repository
 public interface QuizSubmissionRepository extends JpaRepository<QuizSubmission, Long> {
 
-    // Найти все сдачи конкретного студента
+    
     List<QuizSubmission> findByStudent(User student);
 
-    // Найти все сдачи конкретного теста
+    
     List<QuizSubmission> findByQuiz(Quiz quiz);
 
-    // Найти сдачу студента на конкретный тест (одна попытка)
+    
     Optional<QuizSubmission> findByStudentAndQuiz(User student, Quiz quiz);
 }
