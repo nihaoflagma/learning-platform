@@ -16,33 +16,33 @@ public class UserController {
         this.userService = userService;
     }
 
-    // Получить всех пользователей
+    
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    // Получить пользователя по ID
+    
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.getUserById(id)
                 .orElseThrow(() -> new RuntimeException("Пользователь не найден"));
     }
 
-    // Создать нового пользователя
+    
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
-    // Обновить пользователя
+    
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
         user.setId(id);
         return userService.updateUser(user);
     }
 
-    // Удалить пользователя
+    
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
