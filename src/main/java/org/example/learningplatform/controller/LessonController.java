@@ -27,20 +27,20 @@ public class LessonController {
         this.quizService = quizService;
     }
 
-    // Получить все уроки
+    
     @GetMapping
     public List<Lesson> getAllLessons() {
         return lessonService.getAllLessons();
     }
 
-    // Получить конкретный урок
+    
     @GetMapping("/{id}")
     public Lesson getLesson(@PathVariable Long id) {
         return lessonService.getLessonById(id)
                 .orElseThrow(() -> new RuntimeException("Урок не найден"));
     }
 
-    // Получить все задания урока
+    
     @GetMapping("/{id}/assignments")
     public List<Assignment> getAssignmentsOfLesson(@PathVariable Long id) {
         Lesson lesson = lessonService.getLessonById(id)
@@ -51,7 +51,7 @@ public class LessonController {
                 .collect(Collectors.toList());
     }
 
-    // Получить все тесты урока
+    
     @GetMapping("/{id}/quizzes")
     public List<Quiz> getQuizzesOfLesson(@PathVariable Long id) {
         Lesson lesson = lessonService.getLessonById(id)
