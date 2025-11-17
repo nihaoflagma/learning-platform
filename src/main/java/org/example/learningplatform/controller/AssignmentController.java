@@ -27,20 +27,20 @@ public class AssignmentController {
         this.userService = userService;
     }
 
-    // Получить все задания
+    
     @GetMapping("/assignments")
     public List<Assignment> getAllAssignments() {
         return assignmentService.getAllAssignments();
     }
 
-    // Получить задание по ID
+    
     @GetMapping("/assignments/{id}")
     public Assignment getAssignment(@PathVariable Long id) {
         return assignmentService.getAssignmentById(id)
                 .orElseThrow(() -> new RuntimeException("Задание не найдено"));
     }
 
-    // Отправка решения студентом
+    
     @PostMapping("/assignments/{id}/submit")
     public Submission submitAssignment(@PathVariable Long id,
                                        @RequestParam Long studentId,
@@ -59,7 +59,7 @@ public class AssignmentController {
         return submissionService.submitAssignment(submission);
     }
 
-    // Получить все решения студента
+    
     @GetMapping("/submissions/student/{studentId}")
     public List<Submission> getStudentSubmissions(@PathVariable Long studentId) {
         User student = userService.getUserById(studentId)
