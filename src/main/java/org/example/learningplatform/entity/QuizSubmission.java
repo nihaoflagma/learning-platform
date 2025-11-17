@@ -28,7 +28,7 @@ public class QuizSubmission {
     @Column(columnDefinition = "TEXT")
     private String answers;
     @Column(name = "taken_at", nullable = false)
-    private LocalDateTime submittedAt;// исправлено название поля
+    private LocalDateTime submittedAt;
 
     @Column(nullable = false)
     private Double score;
