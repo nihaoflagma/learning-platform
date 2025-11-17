@@ -16,27 +16,27 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    // Получить всех пользователей
+    
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    // Получить пользователя по ID
+    
     public Optional<User> getUserById(Long id) {
         return userRepository.findById(id);
     }
 
-    // Создать нового пользователя
+    
     public User createUser(User user) {
         return userRepository.save(user);
     }
 
-    // Обновить пользователя
+    
     public User updateUser(User user) {
         return userRepository.save(user);
     }
 
-    // Удалить пользователя
+    
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
