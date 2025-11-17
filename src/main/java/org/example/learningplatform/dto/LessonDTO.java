@@ -1,4 +1,4 @@
-// LessonDTO.java
+
 package org.example.learningplatform.dto;
 
 import lombok.Data;
