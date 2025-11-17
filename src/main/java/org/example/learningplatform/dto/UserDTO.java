@@ -5,7 +5,7 @@ public class UserDTO {
     private String username;
     private String email;
     private String fullName;
-    private String role; // например "student", "teacher"
+    private String role; 
 
-    // getters and setters
+    
 }
