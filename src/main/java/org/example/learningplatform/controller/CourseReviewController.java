@@ -26,7 +26,7 @@ public class CourseReviewController {
         this.userRepository = userRepository;
     }
 
-    // Создать новый отзыв
+    
     @PostMapping("/course/{courseId}/student/{studentId}")
     public CourseReview createReview(@PathVariable Long courseId,
                                      @PathVariable Long studentId,
@@ -40,20 +40,20 @@ public class CourseReviewController {
 
         CourseReview review = new CourseReview();
         review.setCourse(course);
-        review.setStudent(student); // исправлено
+        review.setStudent(student); 
         review.setRating(rating);
-        review.setComment(comment); // исправлено
+        review.setComment(comment); 
 
         return reviewRepository.save(review);
     }
 
-    // Получить все отзывы
+    
     @GetMapping
     public List<CourseReview> getAllReviews() {
         return reviewRepository.findAll();
     }
 
-    // Получить отзывы по курсу
+    
     @GetMapping("/course/{courseId}")
     public List<CourseReview> getReviewsByCourse(@PathVariable Long courseId) {
         Course course = courseRepository.findById(courseId)
@@ -61,7 +61,7 @@ public class CourseReviewController {
         return reviewRepository.findByCourse(course);
     }
 
-    // Получить отзывы студента
+    
     @GetMapping("/student/{studentId}")
     public List<CourseReview> getReviewsByStudent(@PathVariable Long studentId) {
         User student = userRepository.findById(studentId)
@@ -69,7 +69,7 @@ public class CourseReviewController {
         return reviewRepository.findByStudent(student);
     }
 
-    // Удалить отзыв
+    
     @DeleteMapping("/{reviewId}")
     public void deleteReview(@PathVariable Long reviewId) {
         reviewRepository.deleteById(reviewId);
