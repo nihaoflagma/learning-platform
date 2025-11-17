@@ -19,16 +19,16 @@ public class AnswerOption {
     @Column(length = 1000, nullable = false)
     private String text;
 
-    // Булевое поле для корректного ответа
+    
     @Column(nullable = false)
     private boolean correct;
 
-    // Связь с вопросом (Many-to-One)
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id", nullable = false)
     private Question question;
 
-    // Удобный метод для DTO / API
+    
     public boolean isCorrect() {
         return correct;
     }
