@@ -18,17 +18,17 @@ public class Enrollment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // студент
+   
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id", nullable = false)
     private User student;
 
-    // курс
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
     private LocalDateTime enrolledAt;
 
-    private Double progress; // например, процент прохождения
+    private Double progress; 
 }
