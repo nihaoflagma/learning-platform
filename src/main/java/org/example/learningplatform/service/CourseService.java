@@ -20,32 +20,32 @@ public class CourseService {
         this.moduleRepository = moduleRepository;
     }
 
-    // Получить все курсы
+    
     public List<Course> getAllCourses() {
         return courseRepository.findAll();
     }
 
-    // Получить курс по ID
+    
     public Optional<Course> getCourseById(Long id) {
         return courseRepository.findById(id);
     }
 
-    // Создать новый курс
+    
     public Course createCourse(Course course) {
         return courseRepository.save(course);
     }
 
-    // Обновить курс
+    
     public Course updateCourse(Course course) {
         return courseRepository.save(course);
     }
 
-    // Удалить курс по ID
+    
     public void deleteCourse(Long id) {
         courseRepository.deleteById(id);
     }
 
-    // Добавить модуль к курсу
+    
     public Module addModuleToCourse(Long courseId, Module module) {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new RuntimeException("Course not found"));
@@ -53,11 +53,11 @@ public class CourseService {
         return moduleRepository.save(module);
     }
 
-    // Получить курс с модулями и уроками (инициализация ленивых коллекций)
+    
     public Course getCourseWithModulesAndLessons(Long courseId) {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new RuntimeException("Course not found"));
-        course.getModules().forEach(m -> m.getLessons().size()); // ленивые коллекции инициализируем
+        course.getModules().forEach(m -> m.getLessons().size()); 
         return course;
     }
 }
