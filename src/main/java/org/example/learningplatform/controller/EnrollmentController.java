@@ -17,27 +17,27 @@ public class EnrollmentController {
         this.enrollmentService = enrollmentService;
     }
 
-    // Записать студента на курс
+    
     @PostMapping("/enroll")
     public String enrollStudent(@RequestParam Long courseId, @RequestParam Long studentId) {
         enrollmentService.enrollStudent(courseId, studentId);
         return "Студент записан на курс";
     }
 
-    // Отписать студента от курса
+    
     @PostMapping("/unenroll")
     public String unenrollStudent(@RequestParam Long courseId, @RequestParam Long studentId) {
         enrollmentService.unenrollStudent(courseId, studentId);
         return "Студент отписан от курса";
     }
 
-    // Получить всех студентов курса
+    
     @GetMapping("/course/{courseId}/students")
     public List<User> getStudentsInCourse(@PathVariable Long courseId) {
         return enrollmentService.getStudentsInCourse(courseId);
     }
 
-    // Получить все курсы студента
+    
     @GetMapping("/student/{studentId}/courses")
     public List<Course> getCoursesOfStudent(@PathVariable Long studentId) {
         return enrollmentService.getCoursesOfStudent(studentId);
