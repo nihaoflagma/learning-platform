@@ -40,7 +40,7 @@ public class AssignmentService {
         assignmentRepository.deleteById(id);
     }
 
-    // Получить все задания конкретного урока
+    
     public List<Assignment> getAssignmentsByLesson(Long lessonId) {
         Lesson lesson = lessonRepository.findById(lessonId)
                 .orElseThrow(() -> new RuntimeException("Урок не найден"));
