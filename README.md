@@ -1,4 +1,4 @@
-
+#ОБЯЗАТЕЛЬНО НА GitHub ВЫБРАТЬ ВЕТКУ MASTER ДЛЯ ПРОСМОТРА РАБОТЫ 
 # Learning Platform — Spring Boot учебная платформа с PostgreSQL и Hibernate/JPA
 
 # Описание проекта
@@ -109,7 +109,7 @@ database:
   type: PostgreSQL
   url: jdbc:postgresql://localhost:5432/learning_platform
   username: postgres
-  password: pDamnmadam1
+  password: Damnmadam1
   hibernate_ddl_auto: update
   show_sql: true
 
