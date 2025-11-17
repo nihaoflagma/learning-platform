@@ -17,27 +17,27 @@ public class CourseReviewService {
         this.reviewRepository = reviewRepository;
     }
 
-    // Получить все отзывы
+    
     public List<CourseReview> getAllReviews() {
         return reviewRepository.findAll();
     }
 
-    // Получить отзывы по курсу
+    
     public List<CourseReview> getReviewsByCourse(Course course) {
         return reviewRepository.findByCourse(course);
     }
 
-    // Создать отзыв
+   
     public CourseReview createReview(CourseReview review) {
         return reviewRepository.save(review);
     }
 
-    // Удалить отзыв
+    
     public void deleteReview(Long id) {
         reviewRepository.deleteById(id);
     }
 
-    // Получить отзыв по ID
+    
     public Optional<CourseReview> getReviewById(Long id) {
         return reviewRepository.findById(id);
     }
