@@ -27,7 +27,7 @@ public class Lesson {
 
     private String videoUrl;
 
-    // связь с модулем
+    
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "module_id", nullable = false)
     private Module module;
