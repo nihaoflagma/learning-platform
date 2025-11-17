@@ -19,29 +19,29 @@ public class QuizSubmissionService {
         this.quizSubmissionRepository = quizSubmissionRepository;
     }
 
-    // Сдать тест
+   
     @Transactional
     public QuizSubmission submitQuiz(QuizSubmission submission) {
-        // Можно добавить подсчет баллов, если ответы сохранены
+        
         return quizSubmissionRepository.save(submission);
     }
 
-    // Получить все сдачи тестов
+    
     public List<QuizSubmission> getAllSubmissions() {
         return quizSubmissionRepository.findAll();
     }
 
-    // Получить сдачу по ID
+    
     public Optional<QuizSubmission> getSubmissionById(Long id) {
         return quizSubmissionRepository.findById(id);
     }
 
-    // Получить все сдачи конкретного студента
+    
     public List<QuizSubmission> getSubmissionsByStudent(User student) {
         return quizSubmissionRepository.findByStudent(student);
     }
 
-    // Получить все сдачи конкретного теста
+    
     public List<QuizSubmission> getSubmissionsByQuiz(Quiz quiz) {
         return quizSubmissionRepository.findByQuiz(quiz);
     }
