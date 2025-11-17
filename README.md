@@ -109,7 +109,7 @@ database:
   type: PostgreSQL
   url: jdbc:postgresql://localhost:5432/learning_platform
   username: postgres
-  password: password
+  password: pDamnmadam1
   hibernate_ddl_auto: update
   show_sql: true
 
