@@ -25,17 +25,17 @@ public class Assignment {
     @Column(length = 2000)
     private String description;
 
-    // Храним дату и время дедлайна
+    
     private LocalDateTime dueDate;
 
     private Integer maxScore;
 
-    // связь с уроком
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lesson_id", nullable = false)
     private Lesson lesson;
 
-    // решения студентов
+    
     @OneToMany(mappedBy = "assignment", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Submission> submissions;
 }
